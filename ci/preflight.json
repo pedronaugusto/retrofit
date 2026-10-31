@@ -1,0 +1,31 @@
+{
+  "sources": [
+    "src"
+  ],
+  "test_roots": [
+    "src/tests.zig"
+  ],
+  "test_support": [
+    "src/testing/**",
+    "test/**"
+  ],
+  "test_dependencies": [
+    "shakedown"
+  ],
+  "glint_paths": [
+    "src",
+    "ci",
+    "build.zig"
+  ],
+  "glint": {
+    "rules": [
+      { "id": "P003", "level": "gate" },
+      { "id": "A001", "level": "gate" },
+      { "id": "A002", "level": "gate" },
+      { "id": "A003", "level": "gate" },
+      { "id": "A004", "level": "gate" },
+      { "id": "A005", "level": "gate" },
+      { "id": "Z026", "level": "gate" }
+    ]
+  }
+}
