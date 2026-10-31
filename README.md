@@ -15,7 +15,7 @@ every build, with no copy of the upstream to keep in step and no vendor check be
 const retrofit = @import("retrofit");
 
 pub fn build(b: *std.Build) void {
-    const cgltf = retrofit.patched(b, b.dependency("cgltf", .{}).path(""), b.path("patches"));
+    const cgltf = retrofit.patched(b, b.dependency("cgltf", .{}).path(""), b.path("patches/cgltf"));
     module.addIncludePath(cgltf);
     module.addCSourceFiles(.{ .root = cgltf, .files = &.{"cgltf.c"} });
 }
@@ -32,6 +32,10 @@ and why, with its evidence, then the diff. The files' names are the order (`0001
 `0002-…`), so there is no list to keep. Every file in the directory must be a `.patch`, so
 nothing there is left out unseen. Refresh a series with git: apply it to a checkout of the
 upstream with `git am`, edit, and write it again with `git format-patch`.
+
+Keep each upstream's series in `patches/<key>`, under the key `build.zig.zon` pins it by:
+[bay](https://github.com/pedronaugusto/bay)'s `outdated` counts it there beside the
+upstream's tag.
 
 Keep the patches as git writes them, with `*.patch -text` in `.gitattributes`, so no
 checkout translates their line endings.
