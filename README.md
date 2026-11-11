@@ -51,6 +51,12 @@ A patch modifies, creates and deletes files. A rename or a copy applies as the f
 written at its new path with the hunks applied (and, for a rename, the old one deleted).
 A mode change, a binary change, a link and a path out of the tree are refused by name.
 
+## Stability
+
+retrofit is 0.x and tracks Zig 0.17.x. A breaking change comes only in a minor release
+(0.1 to 0.2), with a CHANGELOG entry saying what changed and what to write instead; a
+patch release never breaks.
+
 ## Development
 
 retrofit is developed with [bay](https://github.com/pedronaugusto/bay): `bay dev test`
