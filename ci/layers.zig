@@ -2,6 +2,7 @@
 const gantry = @import("gantry");
 
 pub const layers: []const gantry.rules.Layer = &.{
+    .{ .name = "input", .patterns = &.{"src/input.zig"} },
     .{ .name = "a patch read", .patterns = &.{"src/series.zig"} },
     .{ .name = "the patched tree", .patterns = &.{"src/tree.zig"} },
     .{ .name = "the program", .patterns = &.{"src/main.zig"} },
@@ -21,6 +22,7 @@ pub const references: []const gantry.rules.ReferenceRule = &.{
 };
 
 pub const required = [_][]const u8{
+    "src/input.zig",
     "src/series.zig",
     "src/tree.zig",
     "src/main.zig",

@@ -7,6 +7,7 @@ const std = @import("std");
 const aegis = @import("aegis");
 const parallax = @import("parallax");
 const series = @import("series.zig");
+const input = @import("input.zig");
 const Allocator = std.mem.Allocator;
 const Io = std.Io;
 
@@ -37,7 +38,7 @@ pub fn make(io: Io, gpa: Allocator, upstream: Io.Dir, out: Io.Dir, patches: []co
     try copy(io, gpa, upstream, out, diagnostic);
     for (patches) |path| {
         const name = std.fs.path.basename(path);
-        const bytes = try aegis.own.readFile(io, Io.Dir.cwd(), path, gpa, series.limits.patch_bytes);
+        const bytes = try input.patch(io, gpa, path, series.limits.patch_bytes);
         defer gpa.free(bytes);
         var read_diagnostic: series.Diagnostic = .{};
         var patch = series.read(gpa, .init(bytes), &read_diagnostic) catch |err| {
@@ -70,7 +71,7 @@ fn refuse(gpa: Allocator, diagnostic: *Diagnostic, err: Error, comptime format: 
 
 /// Applies one change of the patch `name` to the tree in `dir`.
 fn applyChange(io: Io, gpa: Allocator, dir: Io.Dir, name: []const u8, change: series.Change, diagnostic: *Diagnostic) Error!void {
-    const base: []u8 = if (change.from) |from| aegis.own.readFile(io, dir, try native(gpa, from), gpa, file_bytes) catch |err| switch (err) {
+    const base: []u8 = if (change.from) |from| input.file(io, gpa, dir, try native(gpa, from), file_bytes) catch |err| switch (err) {
         error.FileNotFound => return refuse(gpa, diagnostic, error.MissingFile, "{s}: {s} is not in the tree", .{ name, from.bytes }),
         else => |e| return e,
     } else try gpa.alloc(u8, 0);

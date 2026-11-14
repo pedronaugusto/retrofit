@@ -1,0 +1,11 @@
+{
+  "seams": [
+    {
+      "file": "src/input.zig",
+      "rules": [
+        "A009"
+      ],
+      "reason": "retrofit's input seam: the patches of a series and the upstream's files a patch changes, each read whole under its limit; the patch reader and the tree read the bytes it hands back"
+    }
+  ]
+}
