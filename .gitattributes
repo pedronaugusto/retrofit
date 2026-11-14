@@ -1,1 +1,5 @@
+# Everything this repository holds is LF on every platform, so the fixtures a test
+# applies a patch to are the bytes the patch names.
+* text=auto eol=lf
+# A patch is kept exactly as git wrote it: its line endings are bytes it matches.
 *.patch -text
