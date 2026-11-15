@@ -10,6 +10,7 @@
 
 ### Changed
 
+- Development on preflight's ci-standard f991816 and shakedown 327bc61, whose fuzz runner takes the options preflight passes it.
 - Pins aegis dc3ed602, still 0.2.4; development on preflight's ci-standard 0990716 and glint 0.8, and shakedown ed5a873. The patches and the upstream's files are read in one input seam (`src/input.zig`).
 - The README states retrofit's stability policy: 0.x, tracking Zig 0.17.x; a breaking change only in a minor release, with its CHANGELOG entry; a patch release never breaks.
 - Pins aegis breaking-0.3 (a34e694), the 0.3.0 line the family is on, where it pinned aegis 0.2.3, and shakedown main (4979fa9) for the tests. retrofit builds on them unchanged.
