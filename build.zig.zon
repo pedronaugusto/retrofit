@@ -6,18 +6,18 @@
     .paths = .{ "build.zig", "build.zig.zon", "src", "README.md", "CHANGELOG.md", "LICENSE" },
     .dependencies = .{
         .aegis = .{
-            .url = "git+https://github.com/pedronaugusto/aegis#dc3ed602f9c18b4473e9c649d1b1f36403603018",
-            .hash = "aegis-0.2.4-rsxouheoDQB7ckAmyiNbPdOdlqJnN1Sj56bM7_iPKhpY",
+            .url = "git+https://github.com/pedronaugusto/aegis#f52eabef3ec6534c3a74bea3a3b7d95a91ce2581",
+            .hash = "aegis-0.2.4-rsxouoquDQApwYDuGdd2YyEeTeNp6CnJoOZKdVCfc3jt",
         },
         .parallax = .{
-            .url = "git+https://github.com/pedronaugusto/parallax#93187c756e79448dabacde6cb0d5aa33c726a945",
-            .hash = "parallax-0.3.0-lz9Br9aeBgA070EIblkC_S4GWjtHmtlZvZGd7oF0ymHw",
+            .url = "git+https://github.com/pedronaugusto/parallax#4d3c554c5c53e5cf12abbcad18440d8326265458",
+            .hash = "parallax-0.3.0-lz9Br3DUBgDD_3KJp67x5rP0oAmc3QEMrvghmnkJJjis",
         },
     },
     .dev_dependencies = .{
         .preflight = .{
-            .url = "git+https://github.com/pedronaugusto/preflight?ref=ci-standard#f991816b108a21e4508924e3c220fcc36615aa77",
-            .hash = "preflight-0.18.6-LX1Zwnv-GwCkV_vbReMV3ld3WZ9xyw7vAG1gSja5eupx",
+            .url = "git+https://github.com/pedronaugusto/preflight?ref=ci-standard#158c1763b4142ac13715fb2b89d11fd46a1b4bed",
+            .hash = "preflight-0.18.6-LX1ZwskrHABgr9REQqYovipaEjRJIeV0GZNu-1rrr3dR",
         },
         .shakedown = .{
             .url = "git+https://github.com/pedronaugusto/shakedown#327bc61dc5cdf6ac93865684847f4451ac3eced9",
