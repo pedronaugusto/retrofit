@@ -9,6 +9,5 @@
     "aarch64-windows-gnu",
     "x86_64-macos",
     "aarch64-macos"
-  ],
-  "compile_once": true
+  ]
 }
